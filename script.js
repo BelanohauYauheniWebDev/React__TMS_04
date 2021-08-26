@@ -54,3 +54,9 @@ const ObjectFromUsersByIdAndEmail = users.reduce((acc, { id, email }) => {
   acc[id] = email;
   return acc;
 }, {});
+
+//2. Получить общую сумму лет пользователей.
+
+const summUsersAge = users.reduce((acc, { age }) => {
+  return acc + age;
+}, 0);
