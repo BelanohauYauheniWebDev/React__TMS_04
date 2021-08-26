@@ -56,7 +56,13 @@ const ObjectFromUsersByIdAndEmail = users.reduce((acc, { id, email }) => {
 }, {});
 
 //2. Получить общую сумму лет пользователей.
-
 const summUsersAge = users.reduce((acc, { age }) => {
   return acc + age;
 }, 0);
+
+//3. Получить новый массив, где пользователи младше 40.
+
+const getUsersLess40 = users.reduce((acc, user) => {
+  const { age } = user;
+  return age < 40 ? [...(acc || []), user] : acc;
+}, []);
