@@ -50,9 +50,11 @@ const users = [
 ];
 
 //1. Из массива пользователей получить объект, где ключ это значение поле `id`, а значение его `email`
-const ObjectFromUsersByIdAndEmail = users.reduce((acc, { id, email }) => {
-  acc[id] = email;
-  return acc;
+const objectFromUsers = users.reduce((acc, { id, email }) => {
+  return {
+    ...acc,
+    [id]: email,
+  };
 }, {});
 
 //2. Получить общую сумму лет пользователей.
